@@ -1,16 +1,20 @@
 # **SQL Query Commands**
  
 ### **SELECT** selects columns to return
->**Query Example:** SELECT **\*** FROM (table) grabs everything
+>**Query Example:** SELECT **\*** FROM table
+>> grabs everything
  
 ### **DISTINCT** selects only unique rows in the specified column
->**Query Example:** SELECT DISTINCT(column) FROM (table) grabs unique columns only
+>**Query Example:** SELECT DISTINCT(column) FROM table
+>> grabs unique columns only
  
 ### **COUNT** returns the number of input rows that match a specific condition or query
->**Query Example:** SELECT COUNT(column) FROM (table) returns the number of rows in name column from table
+>**Query Example:** SELECT COUNT(column) FROM(table
+>> returns the number of rows in name column from table
 - parenthesis is required to specify column
 - If checking how many rows are in a table COUNT(\*) is acceptable
-> **NOTE:** SELECT COUNT( DISTINCT column) FROM table returns the number of unique names in the column
+> **NOTE:** SELECT COUNT( DISTINCT column) FROM table
+>> returns the number of unique names in the column
  
 ### **WHERE** is used to filter rows returned from the SELECT statement 
 >**Query Example:** SELECT column FROM table WHERE something = ‘something’ (case sensitive)
@@ -19,22 +23,23 @@
 - You can use logical operators (AND, OR, NOT)
 
 ### **ORDER BY** is used to sort rows based on column value  
-> **Query Example:** SELECT column1, column2 FROM table ORDER BY column1, column2 ASC/DESC
-> **NOTE:** This will order by column1  first, then column2
+>**Query Example:** SELECT column1, column2 FROM table ORDER BY column1, column2 ASC/DESC
+>>**NOTE:** This will order by column1  first, then column2
 - Put towards the end of the query statement. Filter and select first, then order.
 - Can do either ascending or descending
 - Can sort multiple columns, but order by what column is listed first
 
 ### **LIMIT** allows us to limit the number of rows returned for a query
-> **Query Example:** SELECT * FROM table LIMIT 1
+>**Query Example:** SELECT * FROM table LIMIT #
 -	Useful in large tables, where we want to just get the top x of a query OR an idea of the top of the query results
 -	Goes at the very bottom of the command request
 > **NOTE:** SELECT * FROM table LIMIT 1
-> is commonly used to see the layout of a table
+>> is commonly used to see the layout of a table
 
 ### **BETWEEN** is used to specify values in the middle of a low and high value
+>**Query Example:** SELECT * FROM table WHERE column BETWEEN lowValue AND highValue
 -	BETWEEN low and high is the same as WHERE (value >= low AND value <= high)
-  - **NOTE:** Just improved syntax
+   -	**NOTE:** Just improved syntax
 -	Also, can use NOT BETWEEN low AND high  
 
 ---
