@@ -133,5 +133,6 @@ Allows you to filter aggregate data columns like the WHERE clause for category c
 
 ### AS
 Allows us to rename a column in the output table, (this is strictly for readability)
-> **Query Example::** SELECT column1, SUM(column2) AS total spent FROM table GROUP BY column1 ORDER BY SUM(column2) HAVING SUM(column2) > 100
+> **Query Example::** SELECT column1, SUM(column2) AS total spent FROM table GROUP BY column1 ORDER BY SUM(column2) HAVING SUM(column2) > 100      
+
 **IMPORTANT** that you reference SUM(column2) for all query statements since AS total statement is only in the visual aspect and will throw an error if used elsewhere in the query statement
