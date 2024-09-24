@@ -156,5 +156,35 @@ Joins allow the combination of multiple tables together to retreive values on ei
 > [!Important]
 > To specify columns in joins uses the syntax tableA.column1 and tableB.column1. You do not need to specify which table if there is no column with the same name.
 
-### Inner Joins
+![Join representation]()
 
+### Inner Joins
+| | |
+|-|-|
+| **Query Example:** SELECT column1 FROM TableA <br> **INNER JOIN** TableB ON TableA.col = TableB.col <br><br> This returns columns where both table have the same value| ![img](pictures/Venn_diagram_inner_join.png)|
+
+### Full Outer Joins
+| | |
+|-|-|
+| **Query Example:** SELECT column1 FROM TableA <br> **FULL OUTER JOIN** TableB ON TableA.col = TableB.col <br><br> This returns all columns. If there is no match, the missing side will have null as values but still be apart of the table| ![img](pictures/Venn_diagram_full_outer.png)|
+
+| | |
+|-|-|
+| **Query Example:** SELECT * FROM tableA <br> FULL OUTER JOIN tableB ON tableA.col = tableB.col <br> **WHERE tableA.col IS null OR tableB IS null**<br><br> This returns all columns that do not match. **The opposite of an inner join**| ![img](pictures/.png)|
+
+### Left Outer Join
+| | |
+|-|-|
+| **Query Example:** SELECT column1 FROM TableA <br> **LEFT OUTER JOIN** TableB ON TableA.col = TableB.col <br><br> This returns all values in TableA and values in TableB that match TableA. | ![img](pictures/Venn_diagram_full_outer.png)|
+
+| | |
+|-|-|
+| **Query Example:** SELECT column1 FROM TableA <br> LEFT OUTER JOIN TableB ON TableA.col = TableB.col <br> **WHERE TableA.col IS null or TableB.col IS null** <br><br> This returns all columns in TableA that dont match TableB| ![img](pictures/Venn_diagram_full_outer.png)|
+
+### Unions
+This is essentially pasting a table below the current table. To do this you need to have tables with the same number of columns and preferrably matching columns. (IE Q1 sales and Q2 sales tables) 
+> **Query Example:** SELECT column_name(s) FROM table1
+> **UNION (ALL)**
+> SELECT column_name(s) FROM table2;
+
+![Visual represenation of Unions]()
