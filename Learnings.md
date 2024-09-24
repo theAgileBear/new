@@ -136,3 +136,7 @@ Allows us to rename a column in the output table, (this is strictly for readabil
 > **Query Example::** SELECT column1, SUM(column2) AS total spent FROM table GROUP BY column1 ORDER BY SUM(column2) HAVING SUM(column2) > 100      
 
 **IMPORTANT** that you reference SUM(column2) for all query statements since AS total statement is only in the visual aspect and will throw an error if used elsewhere in the query statement
+
+## Joins
+Joins allow the combination of multiple tables together to retreive values on either table. Venn diagrams are a good visual representation of how this happens
+> **Query Example:** SELECT foo FROM bar JOIN FooBar
