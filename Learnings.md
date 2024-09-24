@@ -156,7 +156,7 @@ Joins allow the combination of multiple tables together to retreive values on ei
 > [!Important]
 > To specify columns in joins uses the syntax tableA.column1 and tableB.column1. You do not need to specify which table if there is no column with the same name.
 
-![img](pictures/Join representation.webp)
+![img](pictures/Join_representation.webp)
 
 ### Inner Joins
 | | |
@@ -187,4 +187,4 @@ This is essentially pasting a table below the current table. To do this you need
 > **UNION (ALL)**
 > SELECT column_name(s) FROM table2;
 
-![img](Union represenation.webp)
+![img](Union_represenation.webp)
