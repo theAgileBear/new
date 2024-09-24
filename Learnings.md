@@ -187,4 +187,4 @@ This is essentially pasting a table below the current table. To do this you need
 > **UNION (ALL)**
 > SELECT column_name(s) FROM table2;
 
-![img](Union_representation.webp)
+![img](pictures/Union_representation.webp)
