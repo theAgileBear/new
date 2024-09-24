@@ -156,7 +156,7 @@ Joins allow the combination of multiple tables together to retreive values on ei
 > [!Important]
 > To specify columns in joins uses the syntax tableA.column1 and tableB.column1. You do not need to specify which table if there is no column with the same name.
 
-![Join representation]()
+![img](pictures/Join representation.webp)
 
 ### Inner Joins
 | | |
@@ -170,16 +170,16 @@ Joins allow the combination of multiple tables together to retreive values on ei
 
 | | |
 |-|-|
-| **Query Example:** SELECT * FROM tableA <br> FULL OUTER JOIN tableB ON tableA.col = tableB.col <br> **WHERE tableA.col IS null OR tableB IS null**<br><br> This returns all columns that do not match. **The opposite of an inner join**| ![img](pictures/.png)|
+| **Query Example:** SELECT * FROM tableA <br> FULL OUTER JOIN tableB ON tableA.col = tableB.col <br> **WHERE tableA.col IS null OR tableB IS null**<br><br> This returns all columns that do not match. **The opposite of an inner join**| ![img](pictures/Venn_diagram_full_outer_is_null.png)|
 
 ### Left Outer Join
 | | |
 |-|-|
-| **Query Example:** SELECT column1 FROM TableA <br> **LEFT OUTER JOIN** TableB ON TableA.col = TableB.col <br><br> This returns all values in TableA and values in TableB that match TableA. | ![img](pictures/Venn_diagram_full_outer.png)|
+| **Query Example:** SELECT column1 FROM TableA <br> **LEFT OUTER JOIN** TableB ON TableA.col = TableB.col <br><br> This returns all values in TableA and values in TableB that match TableA. | ![img](pictures/Venn_diagram_left_outer_join.png)|
 
 | | |
 |-|-|
-| **Query Example:** SELECT column1 FROM TableA <br> LEFT OUTER JOIN TableB ON TableA.col = TableB.col <br> **WHERE TableA.col IS null or TableB.col IS null** <br><br> This returns all columns in TableA that dont match TableB| ![img](pictures/Venn_diagram_full_outer.png)|
+| **Query Example:** SELECT column1 FROM TableA <br> LEFT OUTER JOIN TableB ON TableA.col = TableB.col <br> **WHERE TableA.col IS null or TableB.col IS null** <br><br> This returns all columns in TableA that dont match TableB| ![img](pictures/Venn_diagram_left_outer_join_is_null.png)|
 
 ### Unions
 This is essentially pasting a table below the current table. To do this you need to have tables with the same number of columns and preferrably matching columns. (IE Q1 sales and Q2 sales tables) 
@@ -187,4 +187,4 @@ This is essentially pasting a table below the current table. To do this you need
 > **UNION (ALL)**
 > SELECT column_name(s) FROM table2;
 
-![Visual represenation of Unions]()
+![img](Union represenation.webp)
