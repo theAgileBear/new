@@ -19,7 +19,8 @@ Returns the number of input rows that match a specific condition or query
 > Returns the number of rows in name column from table
 - Parenthesis is required to specify column
 - If checking how many rows are in a table COUNT(\*) is acceptable
-> **NOTE:** SELECT COUNT( DISTINCT column) FROM table
+> [!NOTE]
+> SELECT COUNT( DISTINCT column) FROM table
 >
 > Returns the number of unique names in the column
  
@@ -33,8 +34,9 @@ Is used to filter rows returned from the SELECT statement
 ### **ORDER BY** 
 Is used to sort rows based on column value  
 > **Query Example:** SELECT column1, column2 FROM table ORDER BY column1, column2 ASC/DESC
->
-> **NOTE:** This will order by column1  first, then column2
+
+> [!NOTE]
+> This will order by column1  first, then column2
 - Put towards the end of the query statement. Filter and select first, then order.
 - Can do either ascending or descending
 - Can sort multiple columns, but order by what column is listed first
@@ -44,26 +46,32 @@ Allows us to limit the number of rows returned for a query
 > **Query Example:** SELECT * FROM table LIMIT #
 -	Useful in large tables, where we want to just get the top x of a query OR an idea of the top of the query results
 -	Goes at the very bottom of the command request
-> **NOTE:** SELECT * FROM table LIMIT 1
+> [!NOTE]
+>  SELECT * FROM table LIMIT 1
 >
 > Is commonly used to see the layout of a table
 
-### **BETWEEN** 
+### **BETWEEN** and **NOT BETWEEN**
 Is used to specify values in the middle of a low and high value
 >**Query Example:** SELECT * FROM table WHERE column BETWEEN lowValue AND highValue
--	BETWEEN low and high is the same as WHERE (value >= low AND value <= high)
-   -	**NOTE:** Just improved syntax
--	Also, can use NOT BETWEEN low AND high  
+
+> [!NOTE]
+>	BETWEEN low and high is the same as WHERE (value >= low AND value <= high)
+> 
+>	Just improved syntax
+> 
+>	Also, can use NOT BETWEEN low AND high  
 
 ---
-**Important:** Using **BETWEEN** for dates is not optimal  
-
-Either explicitly cast    
-> WHERE cast(created_at as date) BETWEEN '2013-05-01' AND '2013-05-01'  <br>
-
-**Or**
-
-Explicitly binary compare  
+> [!Important]
+> Using **BETWEEN** for dates is not optimal
+>
+> Either explicitly cast    
+> WHERE cast(created_at as date) BETWEEN '2013-05-01' AND '2013-05-01'
+>
+> **Or**
+>
+> Explicitly binary compare  
 > WHERE created_at >= '2013-05-01' AND created_at < '2013-05-02'
 ---
 
@@ -97,7 +105,8 @@ Is case Insensitive
 
 ### AVG()
 Returns a float   
-**TIP** complement this with **ROUND**(AVG(column1), # of decimals) to prevent long decimal outputs
+> [!TIP]
+> complement this with **ROUND**(AVG(column1), # of decimals) to prevent long decimal outputs
 
 ### COUNT()
 - COUNT(*) is acceptable
@@ -128,15 +137,24 @@ Removes the timestamp from the DATETIME column
 Allows you to filter aggregate data columns like the WHERE clause for category columns
 > **Query Example:** SELECT column1, SUM(column2) FROM table WHERE column1 != ’whatever’ GROUP BY column1 HAVING SUM(column2) > 1000
 > 
-> This means our output table won't include any SUM less than 1000   
-> **IMPORTANT** This does nothing to affect calculating the SUM, only omitting the specified final aggregate answer.
+> This means our output table won't include any SUM less than 1000
+   
+> [!Important]
+> This does nothing to affect calculating the SUM, only omitting the specified final aggregate answer.
 
 ### AS
 Allows us to rename a column in the output table, (this is strictly for readability)
 > **Query Example::** SELECT column1, SUM(column2) AS total spent FROM table GROUP BY column1 ORDER BY SUM(column2) HAVING SUM(column2) > 100      
 
-**IMPORTANT** that you reference SUM(column2) for all query statements since AS total statement is only in the visual aspect and will throw an error if used elsewhere in the query statement
+> [!Important]
+> that you reference SUM(column2) for all query statements since AS total statement is only in the visual aspect and will throw an error if used elsewhere in the query statement
 
 ## Joins
-Joins allow the combination of multiple tables together to retreive values on either table. Venn diagrams are a good visual representation of how this happens
+Joins allow the combination of multiple tables together to retreive values on either table. Venn diagrams are a good visual representation of how this happens. Visual examples of joins [here](https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/).
 > **Query Example:** SELECT foo FROM bar JOIN FooBar
+
+> [!Important]
+> To specify columns in joins uses the syntax tableA.column1 and tableB.column1. You do not need to specify which table if there is no column with the same name.
+
+### Inner Joins
+
